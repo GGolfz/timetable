@@ -1,0 +1,16 @@
+version: '3'
+services:
+    django-api:
+        container_name: django-api
+        build: ./timetablebackend
+        ports:
+          - 8000:8000
+        volumes:
+          - ./timetablebackend:/app
+    timetable-app:
+        container_name: timetable-app
+        build: ./timetable
+        ports:
+          - 8080:80
+        volumes:
+          - ./timetable:/app
